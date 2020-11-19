@@ -17,6 +17,7 @@ public class UniversityCanteen {
     public static void main(String[] args) {
         
         System.out.println("ksdbbhjdfhjsdgf");
+        System.out.println("Hellooo");
     }
     
 }
