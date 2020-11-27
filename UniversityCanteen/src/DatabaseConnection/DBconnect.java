@@ -1,5 +1,5 @@
 
-package universitycanteen;
+package DatabaseConnection;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
@@ -17,6 +17,7 @@ public class DBconnect {
             con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3308/universitycanteen","root","");
             
         }catch(Exception e){
+            
              
         }
         

@@ -185,6 +185,7 @@ public class Login extends javax.swing.JFrame {
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
      // if("admin".equals(txtUserName.getText()) && txtPassword.getText() =="admin"){
                   mhp.setVisible(true);
+                  this.setVisible(false);
       //}
 
 

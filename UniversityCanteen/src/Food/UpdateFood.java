@@ -68,7 +68,6 @@ public class UpdateFood extends javax.swing.JFrame {
         jLabel7.setText("Available For");
 
         btnUHome.setBackground(new java.awt.Color(33, 75, 76));
-        btnUHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-home-48 (1).png")); // NOI18N
         btnUHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUHomeActionPerformed(evt);
@@ -80,6 +79,11 @@ public class UpdateFood extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
         jButton2.setText("CANCEL");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -163,6 +167,10 @@ public class UpdateFood extends javax.swing.JFrame {
         fh.setVisible(true);
         this.hide();
     }//GEN-LAST:event_btnUHomeActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
