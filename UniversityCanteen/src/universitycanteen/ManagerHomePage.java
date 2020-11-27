@@ -42,6 +42,11 @@ public class ManagerHomePage extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Sign Out");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +78,15 @@ public class ManagerHomePage extends javax.swing.JFrame {
     private void btnAccountCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountCreationActionPerformed
         // TODO add your handling code here:
         cr.setVisible(true);
+        //this.setVisible(false);
     }//GEN-LAST:event_btnAccountCreationActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        Login lg =new Login();
+        lg.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments

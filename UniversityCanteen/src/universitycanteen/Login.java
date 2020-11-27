@@ -140,14 +140,14 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(254, Short.MAX_VALUE)
+                .addContainerGap(281, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,10 +182,22 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogInKeyPressed
 
     ManagerHomePage mhp = new ManagerHomePage();
+    CashierHomePage chp = new CashierHomePage();
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
      // if("admin".equals(txtUserName.getText()) && txtPassword.getText() =="admin"){
-                  mhp.setVisible(true);
-                  this.setVisible(false);
+                  
+     String selectedValue = cmbType.getSelectedItem().toString();
+     
+     if("Manager".equals(selectedValue)){
+              mhp.setVisible(true);
+              this.setVisible(false);
+     }else if ("Cashier".equals(selectedValue)){
+            chp.setVisible(true);
+            this.setVisible(false);
+     }
+     
+     
+
       //}
 
 
