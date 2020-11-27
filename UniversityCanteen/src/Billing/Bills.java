@@ -81,7 +81,7 @@ public class Bills extends javax.swing.JFrame {
         setLocation(new java.awt.Point(30, 50));
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel1.setBackground(new java.awt.Color(153, 51, 0));
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 48)); // NOI18N
         jLabel1.setText("Billing");
