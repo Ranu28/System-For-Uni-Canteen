@@ -16,6 +16,7 @@ public class ManagerHomePage extends javax.swing.JFrame {
      */
     public ManagerHomePage() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -74,7 +75,7 @@ public class ManagerHomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     CashierRegistration cr = new CashierRegistration();
+     Registration cr = new Registration();
     private void btnAccountCreationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountCreationActionPerformed
         // TODO add your handling code here:
         cr.setVisible(true);

@@ -1,6 +1,14 @@
 
 package universitycanteen;
 
+import DatabaseConnection.DBconnect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -8,6 +16,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+      //  this.setLocationRelativeTo(null);
     }
 
     /**
@@ -184,21 +193,52 @@ public class Login extends javax.swing.JFrame {
     ManagerHomePage mhp = new ManagerHomePage();
     CashierHomePage chp = new CashierHomePage();
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-     // if("admin".equals(txtUserName.getText()) && txtPassword.getText() =="admin"){
-                  
-     String selectedValue = cmbType.getSelectedItem().toString();
-     
-     if("Manager".equals(selectedValue)){
-              mhp.setVisible(true);
-              this.setVisible(false);
-     }else if ("Cashier".equals(selectedValue)){
+        try {
+            // if("admin".equals(txtUserName.getText()) && txtPassword.getText() =="admin"){
+            
+            PreparedStatement pst;
+            ResultSet rs;
+            
+            //get the user name and password
+            String userName = txtUserName.getText();
+            String password = String.valueOf(txtPassword.getPassword());
+            
+            //SQL query
+            String quer = "SELECT * FROM `cashierdetails` WHERE `UserName` = ? AND `Password` = ?";
+            
+            
+            pst = DBconnect.getConnect().prepareStatement(quer);
+            
+            pst.setString(1, userName);
+            pst.setString(2, password);
+            
+            rs = pst.executeQuery();
+            
+            if(rs.next())
+            {
+            chp.setVisible(true);
+            this.setVisible(false); 
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Login Error !!","User name or Password incorrect",2 );
+            }
+            
+            /*
+            String selectedValue = cmbType.getSelectedItem().toString();
+            
+            if("Manager".equals(selectedValue)){
+            mhp.setVisible(true);
+            this.setVisible(false);
+            }else if ("Cashier".equals(selectedValue)){
             chp.setVisible(true);
             this.setVisible(false);
-     }
-     
-     
+            }
+            
+        */ } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-      //}
+     
 
 
        

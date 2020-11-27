@@ -71,7 +71,7 @@ public class HomeFood extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(350, 270, 281, 56);
+        jButton2.setBounds(20, 270, 281, 56);
 
         jLabel1.setFont(new java.awt.Font("Stencil", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,14 +117,14 @@ public class HomeFood extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(153, 153, 153));
         jButton6.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
         jButton6.setForeground(new java.awt.Color(51, 0, 0));
-        jButton6.setText("View / Delete Food Details");
+        jButton6.setText("Home Page");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton6);
-        jButton6.setBounds(20, 270, 281, 56);
+        jButton6.setBounds(340, 270, 137, 56);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

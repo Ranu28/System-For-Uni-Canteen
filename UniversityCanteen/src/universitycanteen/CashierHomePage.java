@@ -18,6 +18,7 @@ public class CashierHomePage extends javax.swing.JFrame {
      */
     public CashierHomePage() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
