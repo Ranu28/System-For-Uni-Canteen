@@ -6,6 +6,7 @@
 package Billing;
 
 import javax.swing.JFrame;
+import universitycanteen.CashierHomePage;
 
 /**
  *
@@ -76,6 +77,7 @@ public class Bills extends javax.swing.JFrame {
         btnBAdd = new javax.swing.JButton();
         btnbClose = new javax.swing.JButton();
         btnbminimize = new javax.swing.JButton();
+        btnHomePage = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(30, 50));
@@ -86,8 +88,6 @@ public class Bills extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 48)); // NOI18N
         jLabel1.setText("Billing");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-billing-machine-96 (1).png")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setText("Selection:");
@@ -315,6 +315,7 @@ public class Bills extends javax.swing.JFrame {
                 .addGap(44, 44, 44))
         );
 
+<<<<<<< HEAD
         btnBSave.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         btnBSave.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-save-48.png")); // NOI18N
         btnBSave.setText("SAVE");
@@ -326,18 +327,34 @@ public class Bills extends javax.swing.JFrame {
         btnBAdd.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         btnBAdd.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-add-property-48.png")); // NOI18N
         btnBAdd.setText("ADD");
+=======
+        jButton1.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jButton1.setText("SAVE");
 
-        btnbClose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-close-window-48.png")); // NOI18N
+        jButton2.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        jButton2.setText("RESET");
+
+        jButton17.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jButton17.setText("ADD");
+>>>>>>> 1847406029d4864862a1047b5a81bc7520f27580
+
         btnbClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbCloseActionPerformed(evt);
             }
         });
 
-        btnbminimize.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-minimize-window-48.png")); // NOI18N
         btnbminimize.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbminimizeActionPerformed(evt);
+            }
+        });
+
+        btnHomePage.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        btnHomePage.setText("Home Page");
+        btnHomePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomePageActionPerformed(evt);
             }
         });
 
@@ -360,6 +377,7 @@ public class Bills extends javax.swing.JFrame {
                                 .addGap(41, 41, 41)
                                 .addComponent(jLabel4))
                             .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -377,6 +395,48 @@ public class Bills extends javax.swing.JFrame {
                                         .addGap(30, 30, 30)
                                         .addComponent(txtBID, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
+=======
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton17)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(41, 41, 41)
+                                        .addComponent(jLabel4))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton2)
+                                        .addGap(154, 154, 154))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(jLabel8)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(btnHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(42, 42, 42)))
+                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+>>>>>>> 1847406029d4864862a1047b5a81bc7520f27580
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -387,6 +447,7 @@ public class Bills extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)))
+<<<<<<< HEAD
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,6 +459,12 @@ public class Bills extends javax.swing.JFrame {
                                 .addGap(646, 646, 646)
                                 .addComponent(btnBAdd)))
                         .addGap(208, 208, 208))
+=======
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(413, 413, 413))
+>>>>>>> 1847406029d4864862a1047b5a81bc7520f27580
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(470, 470, 470)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -462,9 +529,16 @@ public class Bills extends javax.swing.JFrame {
                         .addComponent(btnBAdd)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
                             .addComponent(btnBSave, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnBReset, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(99, 99, 99))))
+=======
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addComponent(btnHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
+>>>>>>> 1847406029d4864862a1047b5a81bc7520f27580
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -489,6 +563,13 @@ public class Bills extends javax.swing.JFrame {
     private void btnbminimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbminimizeActionPerformed
         setState(JFrame.ICONIFIED);
     }//GEN-LAST:event_btnbminimizeActionPerformed
+
+    private void btnHomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomePageActionPerformed
+        // TODO add your handling code here:
+            CashierHomePage chp = new CashierHomePage();
+            chp.setVisible(true);
+            this.setVisible(false);
+    }//GEN-LAST:event_btnHomePageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -530,6 +611,7 @@ public class Bills extends javax.swing.JFrame {
     private javax.swing.JButton btnBBday;
     private javax.swing.JButton btnBBun;
     private javax.swing.JButton btnBBurgers;
+<<<<<<< HEAD
     private javax.swing.JButton btnBCake;
     private javax.swing.JButton btnBCutlet;
     private javax.swing.JButton btnBDrinks;
@@ -545,6 +627,9 @@ public class Bills extends javax.swing.JFrame {
     private javax.swing.JButton btnBSave;
     private javax.swing.JButton btnBSoft;
     private javax.swing.JButton btnBSweets;
+=======
+    private javax.swing.JButton btnHomePage;
+>>>>>>> 1847406029d4864862a1047b5a81bc7520f27580
     private javax.swing.JButton btnbClose;
     private javax.swing.JButton btnbminimize;
     private javax.swing.JLabel jLabel1;

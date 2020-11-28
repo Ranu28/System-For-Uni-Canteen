@@ -1,6 +1,14 @@
 
 package universitycanteen;
 
+import DatabaseConnection.DBconnect;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -8,6 +16,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+      //  this.setLocationRelativeTo(null);
     }
 
     /**
@@ -140,14 +149,14 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(254, Short.MAX_VALUE)
+                .addContainerGap(281, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(126, 126, 126))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,12 +190,82 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLogInKeyPressed
 
+    //Creating object of home pages
     ManagerHomePage mhp = new ManagerHomePage();
+    CashierHomePage chp = new CashierHomePage();
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-     // if("admin".equals(txtUserName.getText()) && txtPassword.getText() =="admin"){
-                  mhp.setVisible(true);
-                  System.exit(0);
-      //}
+        try {
+            // if("admin".equals(txtUserName.getText()) && txtPassword.getText() =="admin"){
+            
+            PreparedStatement pst;
+            ResultSet rs;
+            
+            //get the user name and password
+            String userName = txtUserName.getText();
+            String password = String.valueOf(txtPassword.getPassword());
+            String type = cmbType.getSelectedItem().toString();
+            
+            if("".equals(userName) && "".equals(password))
+            {
+            
+            JOptionPane.showMessageDialog(null, "Please enter Username and Password");
+              }
+            
+            else if("".equals(userName))
+            {
+            
+            JOptionPane.showMessageDialog(null, "Please enter Username");
+              }
+            
+            else if( "".equals(password))
+            {
+            
+            JOptionPane.showMessageDialog(null, "Please enter Password");
+              }
+            
+            else{    
+            //SQL query
+            String quer = "SELECT * FROM `employee_details` WHERE `UserName`=?  AND `Password`=? AND `Type`=? ";
+            
+            
+            pst = DBconnect.getConnect().prepareStatement(quer);
+            
+            pst.setString(1, userName);
+            pst.setString(2, password);
+            pst.setString(3, type);
+            
+            rs = pst.executeQuery();
+            if("Manager".equals(type)){
+                            if(rs.next())
+            {
+            mhp.setVisible(true);
+            this.setVisible(false); 
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"User name or Password or Account Type is incorrect");
+            }
+            
+            }else if("Cashier".equals(type)){
+                      if(rs.next())
+            {
+            chp.setVisible(true);
+            this.setVisible(false); 
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"User name or Password or Account Type is incorrect");
+            
+            }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Acoount type error");
+            }
+  
+            }
+            } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+     
 
 
        

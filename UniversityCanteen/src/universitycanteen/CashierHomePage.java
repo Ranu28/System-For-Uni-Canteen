@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package universitycanteen;
+import Billing.Bills;
+import Food.*;
 
 /**
  *
@@ -16,6 +18,7 @@ public class CashierHomePage extends javax.swing.JFrame {
      */
     public CashierHomePage() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,31 +31,84 @@ public class CashierHomePage extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnFoods = new javax.swing.JButton();
+        btnBills = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Sign Out");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        btnFoods.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnFoods.setText("Food");
+        btnFoods.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFoodsActionPerformed(evt);
+            }
+        });
+
+        btnBills.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnBills.setText("Bills");
+        btnBills.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBillsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(686, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87))
+                .addGap(42, 42, 42))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnBills, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFoods, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(643, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(344, Short.MAX_VALUE)
+                .addGap(120, 120, 120)
+                .addComponent(btnBills)
+                .addGap(46, 46, 46)
+                .addComponent(btnFoods, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(123, 123, 123))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        Login lg =new Login();
+        lg.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void btnBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillsActionPerformed
+        // TODO add your handling code here:
+        Bills bil=new Bills();
+        bil.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnBillsActionPerformed
+
+    private void btnFoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodsActionPerformed
+        HomeFood homeFood =new HomeFood();
+        homeFood.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnFoodsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +146,8 @@ public class CashierHomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBills;
+    private javax.swing.JButton btnFoods;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
