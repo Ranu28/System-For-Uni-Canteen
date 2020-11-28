@@ -84,6 +84,11 @@ public class UpdateFood extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
         jButton1.setText("UPDATE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
         jButton2.setText("CANCEL");
@@ -233,15 +238,19 @@ public class UpdateFood extends javax.swing.JFrame {
         this.hide();
     }//GEN-LAST:event_btnUHomeActionPerformed
 
-<<<<<<< HEAD
+
     private void checkUBreakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkUBreakActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_checkUBreakActionPerformed
-=======
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
->>>>>>> 1847406029d4864862a1047b5a81bc7520f27580
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     /**
      * @param args the command line arguments

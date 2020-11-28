@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package universitycanteen;
-import Billing.Bills;
+//import Billing.Bills;
 import Food.*;
 
 /**
@@ -99,9 +99,9 @@ public class CashierHomePage extends javax.swing.JFrame {
 
     private void btnBillsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBillsActionPerformed
         // TODO add your handling code here:
-        Bills bil=new Bills();
-        bil.setVisible(true);
-        this.setVisible(false);
+       // Bills bil=new Bills();
+      //  bil.setVisible(true);
+      //  this.setVisible(false);
     }//GEN-LAST:event_btnBillsActionPerformed
 
     private void btnFoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodsActionPerformed
