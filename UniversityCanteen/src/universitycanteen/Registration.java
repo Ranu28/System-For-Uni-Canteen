@@ -6,6 +6,7 @@
 package universitycanteen;
 import DatabaseConnection.DBconnect;
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 /**
  *
  * @author ranup
@@ -58,8 +59,8 @@ public class Registration extends javax.swing.JFrame {
         btnCreateAccount = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnClearUP = new javax.swing.JButton();
-        txtPass = new javax.swing.JPasswordField();
-        txtConPass = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
+        txtComPassword = new javax.swing.JPasswordField();
         cmbAccountType = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -249,12 +250,12 @@ public class Registration extends javax.swing.JFrame {
             }
         });
 
-        txtPass.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        txtConPass.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtConPass.addActionListener(new java.awt.event.ActionListener() {
+        txtComPassword.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtComPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConPassActionPerformed(evt);
+                txtComPasswordActionPerformed(evt);
             }
         });
 
@@ -288,8 +289,8 @@ public class Registration extends javax.swing.JFrame {
                             .addComponent(jLabel10))
                         .addGap(17, 17, 17)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPass, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtConPass)
+                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtComPassword)
                             .addComponent(txtUserName))))
                 .addContainerGap())
         );
@@ -303,11 +304,11 @@ public class Registration extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(txtConPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtComPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62)
                 .addComponent(cmbAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -352,34 +353,40 @@ public class Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFirstName1ActionPerformed
 
     private void btnCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccountActionPerformed
-   /*     // TODO add your handling code here:
+     
     String DOB = txtDOB.getText();
     String Address = txtAreaAddress.getText();
-    //String conPass = txtConPass.();
-    //String Pass = txtPass
+    String Password = String.valueOf(txtPassword.getPassword());
+    String comPassword = String.valueOf(txtComPassword.getPassword());
+
     String email = txtEmail.getText();
     String firstName = txtFirstName1.getText();
     String lastName = txtLastName.getText();
-    String ID = txtNationalId.getText();*/
+    String ID = txtNationalId.getText();
+    Integer.parseInt(ID);
+    
+   
+    
+
     }//GEN-LAST:event_btnCreateAccountActionPerformed
 
     private void btnClearUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearUPActionPerformed
         // TODO add your handling code here:
         txtUserName.setText("");
-        txtPass.setText("");
-        txtConPass.setText("");
+        txtPassword.setText("");
+        txtComPassword.setText("");
     }//GEN-LAST:event_btnClearUPActionPerformed
 
-    private void txtConPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConPassActionPerformed
+    private void txtComPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComPasswordActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_txtConPassActionPerformed
+    }//GEN-LAST:event_txtComPasswordActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
     txtDOB.setText("");
     txtAreaAddress.setText("");
-    txtConPass.setText("");
+    txtComPassword.setText("");
     txtEmail.setText("");
     txtFirstName1.setText("");
     txtLastName.setText("");
@@ -459,13 +466,13 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JRadioButton rdoFemale;
     private javax.swing.JRadioButton rdoMale;
     private javax.swing.JTextArea txtAreaAddress;
-    private javax.swing.JPasswordField txtConPass;
+    private javax.swing.JPasswordField txtComPassword;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtFirstName1;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtNationalId;
-    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables

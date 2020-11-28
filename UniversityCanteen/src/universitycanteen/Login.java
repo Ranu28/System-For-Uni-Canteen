@@ -190,6 +190,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnLogInKeyPressed
 
+    //Creating object of home pages
     ManagerHomePage mhp = new ManagerHomePage();
     CashierHomePage chp = new CashierHomePage();
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
@@ -202,39 +203,65 @@ public class Login extends javax.swing.JFrame {
             //get the user name and password
             String userName = txtUserName.getText();
             String password = String.valueOf(txtPassword.getPassword());
+            String type = cmbType.getSelectedItem().toString();
             
+            if("".equals(userName) && "".equals(password))
+            {
+            
+            JOptionPane.showMessageDialog(null, "Please enter Username and Password");
+              }
+            
+            else if("".equals(userName))
+            {
+            
+            JOptionPane.showMessageDialog(null, "Please enter Username");
+              }
+            
+            else if( "".equals(password))
+            {
+            
+            JOptionPane.showMessageDialog(null, "Please enter Password");
+              }
+            
+            else{    
             //SQL query
-            String quer = "SELECT * FROM `cashierdetails` WHERE `UserName` = ? AND `Password` = ?";
+            String quer = "SELECT * FROM `employee_details` WHERE `UserName`=?  AND `Password`=? AND `Type`=? ";
             
             
             pst = DBconnect.getConnect().prepareStatement(quer);
             
             pst.setString(1, userName);
             pst.setString(2, password);
+            pst.setString(3, type);
             
             rs = pst.executeQuery();
+            if("Manager".equals(type)){
+                            if(rs.next())
+            {
+            mhp.setVisible(true);
+            this.setVisible(false); 
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"User name or Password or Account Type is incorrect");
+            }
             
-            if(rs.next())
+            }else if("Cashier".equals(type)){
+                      if(rs.next())
             {
             chp.setVisible(true);
             this.setVisible(false); 
             }
             else{
-                JOptionPane.showMessageDialog(null,"Login Error !!","User name or Password incorrect",2 );
+                JOptionPane.showMessageDialog(null,"User name or Password or Account Type is incorrect");
+            
             }
-            
-            /*
-            String selectedValue = cmbType.getSelectedItem().toString();
-            
-            if("Manager".equals(selectedValue)){
-            mhp.setVisible(true);
-            this.setVisible(false);
-            }else if ("Cashier".equals(selectedValue)){
-            chp.setVisible(true);
-            this.setVisible(false);
             }
-            
-        */ } catch (SQLException ex) {
+            else{
+                JOptionPane.showMessageDialog(null, "Acoount type error");
+            }
+  
+            }
+            } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
 
