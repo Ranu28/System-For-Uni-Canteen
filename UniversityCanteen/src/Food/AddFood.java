@@ -5,6 +5,8 @@
  */
 package Food;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Dell
@@ -27,6 +29,7 @@ public class AddFood extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         btnAHome = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -46,10 +49,16 @@ public class AddFood extends javax.swing.JFrame {
         txtAName = new javax.swing.JTextField();
         txtAPrice = new javax.swing.JTextField();
         txtASupp = new javax.swing.JTextField();
+        btnAclose = new javax.swing.JButton();
+        btnAMin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(10, 10, 10, 10));
+        setLocation(new java.awt.Point(200, 150));
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(33, 75, 76));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
 
         btnAHome.setBackground(new java.awt.Color(33, 75, 76));
         btnAHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-home-48 (1).png")); // NOI18N
@@ -78,22 +87,39 @@ public class AddFood extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setText("Food Category");
 
+        comboACat.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         comboACat.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Burgers", "Pastries", "Kottu", "Sandwiches", "Fried rice", "Mini Pizza", "Birthday cakes", "Cake Pieces", "Noodles", "Rolls", "Ctlets", "Buns", "Sweets", "Milk Packets", "Other drinks", "Soft Drinks" }));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setText("Available For:");
 
+        buttonGroup1.add(checkAbreak);
+        checkAbreak.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         checkAbreak.setText("Breakfast");
 
+        buttonGroup1.add(checkALunch);
+        checkALunch.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         checkALunch.setText("Lunch");
 
+        buttonGroup1.add(chechADinner);
+        chechADinner.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         chechADinner.setText("Dinner");
 
         btnASubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnASubmit.setText("Submit");
+        btnASubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnASubmitActionPerformed(evt);
+            }
+        });
 
         btnACancel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         btnACancel.setText("Cancel");
+        btnACancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnACancelActionPerformed(evt);
+            }
+        });
 
         txtAID.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
@@ -103,22 +129,29 @@ public class AddFood extends javax.swing.JFrame {
 
         txtASupp.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        btnAclose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-close-window-48.png")); // NOI18N
+        btnAclose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAcloseActionPerformed(evt);
+            }
+        });
+
+        btnAMin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-minimize-window-48.png")); // NOI18N
+        btnAMin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAMinActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAHome)
-                        .addGap(172, 172, 172)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(btnASubmit)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnACancel)))
+                .addGap(218, 218, 218)
+                .addComponent(btnASubmit)
+                .addGap(35, 35, 35)
+                .addComponent(btnACancel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
@@ -140,7 +173,7 @@ public class AddFood extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtAName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
                                 .addComponent(txtAID, javax.swing.GroupLayout.Alignment.TRAILING)))))
-                .addGap(37, 74, Short.MAX_VALUE)
+                .addGap(37, 82, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
@@ -151,14 +184,27 @@ public class AddFood extends javax.swing.JFrame {
                     .addComponent(comboACat, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(checkALunch, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAHome)
+                .addGap(172, 172, 172)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAMin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAclose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAHome)
-                    .addComponent(jLabel1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAHome)
+                            .addComponent(jLabel1)))
+                    .addComponent(btnAclose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAMin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -177,11 +223,11 @@ public class AddFood extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(txtASupp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnASubmit)
                             .addComponent(btnACancel))
-                        .addGap(0, 22, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -194,7 +240,7 @@ public class AddFood extends javax.swing.JFrame {
                         .addComponent(checkALunch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(chechADinner)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(58, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,6 +265,34 @@ public class AddFood extends javax.swing.JFrame {
         this.hide();
     }//GEN-LAST:event_btnAHomeActionPerformed
 
+    private void btnAcloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcloseActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnAcloseActionPerformed
+
+    private void btnAMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAMinActionPerformed
+        setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_btnAMinActionPerformed
+
+    private void btnACancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnACancelActionPerformed
+        txtAName.setText("");
+        txtAPrice.setText("");
+        txtASupp.setText("");
+        
+    }//GEN-LAST:event_btnACancelActionPerformed
+
+    private void btnASubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnASubmitActionPerformed
+        
+        String id = txtAID.getText();
+        String name = txtAName.getText();
+        String price = txtAPrice.getText();
+        String supplier = txtASupp.getText();
+        String category = (String) comboACat.getSelectedItem();
+        String time;
+        
+       
+        
+    }//GEN-LAST:event_btnASubmitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -230,7 +304,7 @@ public class AddFood extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -248,6 +322,7 @@ public class AddFood extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new AddFood().setVisible(true);
             }
@@ -257,7 +332,10 @@ public class AddFood extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnACancel;
     private javax.swing.JButton btnAHome;
+    private javax.swing.JButton btnAMin;
     private javax.swing.JButton btnASubmit;
+    private javax.swing.JButton btnAclose;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox chechADinner;
     private javax.swing.JCheckBox checkALunch;
     private javax.swing.JCheckBox checkAbreak;
