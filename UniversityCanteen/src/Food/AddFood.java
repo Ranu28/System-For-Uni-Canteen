@@ -61,7 +61,7 @@ public class AddFood extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
 
         btnAHome.setBackground(new java.awt.Color(33, 75, 76));
-        btnAHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-home-48 (1).png")); // NOI18N
+        btnAHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-home-48 (1).png")); // NOI18N
         btnAHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAHomeActionPerformed(evt);
@@ -129,14 +129,14 @@ public class AddFood extends javax.swing.JFrame {
 
         txtASupp.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        btnAclose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-close-window-48.png")); // NOI18N
+        btnAclose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-close-window-48.png")); // NOI18N
         btnAclose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcloseActionPerformed(evt);
             }
         });
 
-        btnAMin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-minimize-window-48.png")); // NOI18N
+        btnAMin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-minimize-window-48.png")); // NOI18N
         btnAMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAMinActionPerformed(evt);
@@ -226,8 +226,7 @@ public class AddFood extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnASubmit)
-                            .addComponent(btnACancel))
-                        .addContainerGap())
+                            .addComponent(btnACancel)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
@@ -240,7 +239,8 @@ public class AddFood extends javax.swing.JFrame {
                         .addComponent(checkALunch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(chechADinner)
-                        .addContainerGap(58, Short.MAX_VALUE))))
+                        .addGap(0, 47, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -222,21 +222,21 @@ public class ViewFood extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableview);
 
-        btnVHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-home-48 (1).png")); // NOI18N
+        btnVHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-home-48 (1).png")); // NOI18N
         btnVHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVHomeActionPerformed(evt);
             }
         });
 
-        btnVClose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-close-window-48.png")); // NOI18N
+        btnVClose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-close-window-48.png")); // NOI18N
         btnVClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVCloseActionPerformed(evt);
             }
         });
 
-        btnVMin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\icons8-minimize-window-48.png")); // NOI18N
+        btnVMin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-minimize-window-48.png")); // NOI18N
         btnVMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVMinActionPerformed(evt);

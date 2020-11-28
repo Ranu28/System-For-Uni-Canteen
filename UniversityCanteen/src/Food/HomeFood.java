@@ -35,10 +35,9 @@ public class HomeFood extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnMain = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -52,6 +51,7 @@ public class HomeFood extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 0, 0));
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-add-new-48.png")); // NOI18N
         jButton1.setText("Add Food Items");
         jButton1.setIconTextGap(8);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +65,7 @@ public class HomeFood extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(153, 153, 153));
         jButton2.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-search-48.png")); // NOI18N
         jButton2.setText("View / Delete Food Details");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +73,7 @@ public class HomeFood extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(20, 270, 281, 56);
+        jButton2.setBounds(180, 250, 335, 56);
 
         jLabel1.setFont(new java.awt.Font("Stencil", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -81,12 +82,14 @@ public class HomeFood extends javax.swing.JFrame {
         jLabel1.setBounds(210, 50, 289, 53);
 
         btnMain.setBackground(new java.awt.Color(0, 0, 0));
+        btnMain.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-home-page-48.png")); // NOI18N
         jPanel1.add(btnMain);
         btnMain.setBounds(30, 40, 60, 60);
 
         jButton3.setBackground(new java.awt.Color(153, 153, 153));
         jButton3.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
         jButton3.setForeground(new java.awt.Color(51, 0, 0));
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-update-64.png")); // NOI18N
         jButton3.setText("Update Food Details");
         jButton3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -96,9 +99,8 @@ public class HomeFood extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3);
         jButton3.setBounds(340, 160, 310, 58);
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(0, 30, 660, 0);
 
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-close-window-48.png")); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -107,6 +109,7 @@ public class HomeFood extends javax.swing.JFrame {
         jPanel1.add(jButton5);
         jButton5.setBounds(630, 0, 30, 30);
 
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-minimize-window-48.png")); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -115,17 +118,9 @@ public class HomeFood extends javax.swing.JFrame {
         jPanel1.add(jButton4);
         jButton4.setBounds(600, 0, 30, 30);
 
-        jButton6.setBackground(new java.awt.Color(153, 153, 153));
-        jButton6.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(51, 0, 0));
-        jButton6.setText("Home Page");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton6);
-        jButton6.setBounds(340, 270, 137, 56);
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\burgers-fries-soda-food-wallpaper-preview.jpg")); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(4, 25, 660, 420);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,13 +161,6 @@ public class HomeFood extends javax.swing.JFrame {
         kh.setVisible(true);
         this.hide();
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-            CashierHomePage chp = new CashierHomePage();
-            chp.setVisible(true);
-            this.setVisible(false);
-    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,9 +204,8 @@ public class HomeFood extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
