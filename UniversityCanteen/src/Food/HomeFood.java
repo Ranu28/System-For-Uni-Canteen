@@ -7,7 +7,8 @@
 package Food;
 
 import javax.swing.JFrame;
-import universitycanteen.CashierHomePage;
+import Employee.CashierHomePage;
+import SuppliersDetails.SuppliersHome;
 
 /**
  *
@@ -29,29 +30,44 @@ public class HomeFood extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnMain = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
+        btnUpdate = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        btnView = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
         setLocation(new java.awt.Point(300, 100));
-        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
-        jPanel1.setLayout(null);
+        btnHome.setBackground(new java.awt.Color(153, 153, 153));
+        btnHome.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(51, 0, 0));
+        btnHome.setText("Back");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
+        jLabel1.setText("Food Details");
+
+        btnUpdate.setBackground(new java.awt.Color(153, 153, 153));
+        btnUpdate.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(51, 0, 0));
+        btnUpdate.setText("Update Food Details");
+        btnUpdate.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 0, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-add-new-48.png")); // NOI18N
         jButton1.setText("Add Food Items");
         jButton1.setIconTextGap(8);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -59,78 +75,48 @@ public class HomeFood extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(10, 160, 300, 60);
 
-        jButton2.setBackground(new java.awt.Color(153, 153, 153));
-        jButton2.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(51, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-search-48.png")); // NOI18N
-        jButton2.setText("View / Delete Food Details");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnView.setBackground(new java.awt.Color(153, 153, 153));
+        btnView.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnView.setForeground(new java.awt.Color(51, 0, 0));
+        btnView.setText("View / Delete Food Details");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnViewActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(180, 250, 335, 56);
-
-        jLabel1.setFont(new java.awt.Font("Stencil", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Food Details");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(210, 50, 289, 53);
-
-        btnMain.setBackground(new java.awt.Color(0, 0, 0));
-        btnMain.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-home-page-48.png")); // NOI18N
-        jPanel1.add(btnMain);
-        btnMain.setBounds(30, 40, 60, 60);
-
-        jButton3.setBackground(new java.awt.Color(153, 153, 153));
-        jButton3.setFont(new java.awt.Font("Broadway", 3, 16)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(51, 0, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-update-64.png")); // NOI18N
-        jButton3.setText("Update Food Details");
-        jButton3.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(340, 160, 310, 58);
-
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-close-window-48.png")); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton5);
-        jButton5.setBounds(630, 0, 30, 30);
-
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-minimize-window-48.png")); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(600, 0, 30, 30);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\burgers-fries-soda-food-wallpaper-preview.jpg")); // NOI18N
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(4, 25, 660, 420);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(92, 92, 92))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(378, 378, 378)
+                .addComponent(jLabel1)
+                .addContainerGap(441, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
 
         pack();
@@ -139,28 +125,26 @@ public class HomeFood extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AddFood fh = new AddFood();
         fh.setVisible(true);
-        this.hide();
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         ViewFood vh = new ViewFood();
         vh.setVisible(true);
-        this.hide();
-    }//GEN-LAST:event_jButton2ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnViewActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         UpdateFood kh = new UpdateFood();
         kh.setVisible(true);
-        this.hide();
-    }//GEN-LAST:event_jButton3ActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        CashierHomePage chp = new CashierHomePage();
+        chp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,6 +175,7 @@ public class HomeFood extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new HomeFood().setVisible(true);
             }
@@ -198,15 +183,11 @@ public class HomeFood extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnMain;
+    private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnView;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
 }

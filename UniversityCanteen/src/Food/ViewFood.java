@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Food;
 
+import DatabaseConnection.DBconnect;
+import java.awt.event.KeyEvent;
+import java.sql.ResultSet;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Dell
- */
 public class ViewFood extends javax.swing.JFrame {
 
     /**
@@ -29,188 +26,66 @@ public class ViewFood extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtVID = new javax.swing.JTextField();
         btnVSearch = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        comboVCategory = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         btnVFetch = new javax.swing.JButton();
-        btnVDelete = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        btnVBurgers = new javax.swing.JButton();
-        btnVRolls = new javax.swing.JButton();
-        btnVBuns = new javax.swing.JButton();
-        btnVRice = new javax.swing.JButton();
-        btnVSandwich = new javax.swing.JButton();
-        btnVKottu = new javax.swing.JButton();
-        btnVNoodles = new javax.swing.JButton();
-        btnVPizza = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        btnVCutlet = new javax.swing.JButton();
-        btnVPastry = new javax.swing.JButton();
-        btnVMilk = new javax.swing.JButton();
-        btnVDrinks = new javax.swing.JButton();
-        btnVSweets = new javax.swing.JButton();
-        btnVSoft = new javax.swing.JButton();
-        btnVBday = new javax.swing.JButton();
-        btnVCake = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableview = new javax.swing.JTable();
-        btnVHome = new javax.swing.JButton();
-        btnVClose = new javax.swing.JButton();
-        btnVMin = new javax.swing.JButton();
+        btnVDelete = new javax.swing.JButton();
+        btnVClear = new javax.swing.JButton();
+        btnHomePage = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(100, 40));
-        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1050, 600));
 
-        jPanel1.setBackground(new java.awt.Color(101, 34, 72));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel1.setText("View Food Details");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel2.setText("Product ID");
 
-        txtVID.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtVID.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtVID.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVIDKeyTyped(evt);
+            }
+        });
 
-        btnVSearch.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnVSearch.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnVSearch.setText("Search");
+        btnVSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVSearchActionPerformed(evt);
+            }
+        });
 
-        btnVFetch.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel4.setText("Category");
+
+        comboVCategory.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        comboVCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Burgers", "Pastries", "Kottu", "Sandwiches", "Fried rice", "Mini Pizza", "Birthday cakes", "Cake Pieces", "Noodles", "Rolls", "Ctlets", "Buns", "Sweets", "Milk Packets", "Other drinks", "Soft Drinks" }));
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        btnVFetch.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnVFetch.setText("Fetch ALL");
-
-        btnVDelete.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        btnVDelete.setText("Delete Item");
-
-        jPanel2.setBackground(new java.awt.Color(130, 43, 112));
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        btnVBurgers.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVBurgers.setText("Burgers");
-
-        btnVRolls.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVRolls.setText("Rolls");
-
-        btnVBuns.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVBuns.setText("Buns");
-
-        btnVRice.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVRice.setText("Fried rice");
-
-        btnVSandwich.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVSandwich.setText("Sandwitches");
-
-        btnVKottu.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVKottu.setText("Kottu");
-
-        btnVNoodles.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVNoodles.setText("Noodles");
-
-        btnVPizza.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVPizza.setText("Mini Pizza");
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 0, 51));
-        jLabel3.setText("Search By Category");
-
-        btnVCutlet.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVCutlet.setText("Cutlets");
-
-        btnVPastry.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVPastry.setText("Pastries");
-
-        btnVMilk.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVMilk.setText("Milk packets");
-
-        btnVDrinks.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVDrinks.setText("Other drinks");
-        btnVDrinks.setToolTipText("");
-
-        btnVSweets.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVSweets.setText("Sweets");
-
-        btnVSoft.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVSoft.setText("Soft Drinks");
-
-        btnVBday.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVBday.setText("Bday cakes");
-
-        btnVCake.setFont(new java.awt.Font("Georgia", 3, 18)); // NOI18N
-        btnVCake.setText("Cake pieces");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(175, 175, 175))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVPastry)
-                    .addComponent(btnVNoodles)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnVCutlet, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                        .addComponent(btnVRolls, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnVBurgers)
-                    .addComponent(btnVKottu, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVSweets)
-                    .addComponent(btnVBuns, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnVMilk)
-                    .addComponent(btnVBday, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVRice, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVSandwich)
-                    .addComponent(btnVCake, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVDrinks)
-                    .addComponent(btnVSoft, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVBurgers)
-                    .addComponent(btnVSandwich))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVPastry)
-                    .addComponent(btnVRice))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVKottu)
-                    .addComponent(btnVPizza))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVNoodles)
-                    .addComponent(btnVBday))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVRolls)
-                    .addComponent(btnVCake))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVCutlet)
-                    .addComponent(btnVMilk))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVBuns)
-                    .addComponent(btnVDrinks))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVSweets)
-                    .addComponent(btnVSoft))
-                .addGap(42, 42, 42))
-        );
+        btnVFetch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVFetchActionPerformed(evt);
+            }
+        });
 
         tableview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -222,116 +97,240 @@ public class ViewFood extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tableview);
 
-        btnVHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-home-48 (1).png")); // NOI18N
-        btnVHome.addActionListener(new java.awt.event.ActionListener() {
+        btnVDelete.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnVDelete.setText("Delete Item");
+        btnVDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVHomeActionPerformed(evt);
+                btnVDeleteActionPerformed(evt);
             }
         });
 
-        btnVClose.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-close-window-48.png")); // NOI18N
-        btnVClose.addActionListener(new java.awt.event.ActionListener() {
+        btnVClear.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnVClear.setText("Clear Items");
+        btnVClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVCloseActionPerformed(evt);
+                btnVClearActionPerformed(evt);
             }
         });
 
-        btnVMin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Desktop\\foodand billicons\\icons8-minimize-window-48.png")); // NOI18N
-        btnVMin.addActionListener(new java.awt.event.ActionListener() {
+        btnHomePage.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnHomePage.setText("Back");
+        btnHomePage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVMinActionPerformed(evt);
+                btnHomePageActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(btnVDelete))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtVID, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(btnVSearch)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                                .addComponent(btnVFetch)))))
-                .addGap(30, 30, 30)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVHome)
-                .addGap(160, 160, 160)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVMin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnVClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnVClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVMin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVHome)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtVID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVSearch)
-                    .addComponent(btnVFetch))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnVDelete)
-                .addGap(41, 41, 41))
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnVDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnVFetch, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnVClear, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnHomePage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVID, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnVSearch)
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(comboVCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtVID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVSearch))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(comboVCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(51, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVFetch, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(btnVDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(btnVClear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(btnHomePage, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnVHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVHomeActionPerformed
-        HomeFood gh = new HomeFood();
-        gh.setVisible(true);
-        this.hide();
-    }//GEN-LAST:event_btnVHomeActionPerformed
+    private void btnHomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomePageActionPerformed
+        HomeFood hf = new HomeFood();
+        hf.setVisible(true);
+        this.setVisible(false);
 
-    private void btnVCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVCloseActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btnVCloseActionPerformed
+    }//GEN-LAST:event_btnHomePageActionPerformed
 
-    private void btnVMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVMinActionPerformed
-        setState(JFrame.ICONIFIED);
-    }//GEN-LAST:event_btnVMinActionPerformed
+    private void btnVDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVDeleteActionPerformed
+
+        try {
+
+            DefaultTableModel dtm = (DefaultTableModel) tableview.getModel();
+
+            int selectedRow = tableview.getSelectedRow();
+            String id = (String) dtm.getValueAt(selectedRow, 0);
+
+            String query = "DELETE FROM fooditems WHERE fid='" + id + "'";
+            DBconnect.sendQuery(query);
+
+            dtm.removeRow(selectedRow);
+
+            JOptionPane.showMessageDialog(null, "Item Deleted", "Information", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Failed To Deleted", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }//GEN-LAST:event_btnVDeleteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try {
+
+            String category1 = (String) comboVCategory.getSelectedItem();
+
+            String query = "SELECT * FROM fooditems WHERE category='" + category1 + "'";
+            ResultSet rs = DBconnect.search(query);
+
+            while (rs.next()) {
+
+                String fid = rs.getString("fid");
+                String name = rs.getString("name");
+                String price = rs.getString("price");
+                String supplier = rs.getString("supplier");
+                String category = rs.getString("category");
+                String time = rs.getString("available");
+
+                Object[] row = {fid, name, price, supplier, category, time};
+
+                DefaultTableModel dtm = (DefaultTableModel) tableview.getModel();
+
+                dtm.addRow(row);
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error "+e);
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnVClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVClearActionPerformed
+        DefaultTableModel dtm = (DefaultTableModel) tableview.getModel();
+        dtm.setRowCount(0);
+    }//GEN-LAST:event_btnVClearActionPerformed
+
+    private void btnVFetchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVFetchActionPerformed
+
+        try {
+
+            String query = "SELECT * FROM fooditems";
+            ResultSet rs = DBconnect.search(query);
+
+            while (rs.next()) {
+
+                String fid = rs.getString("fid");
+                String name = rs.getString("name");
+                String price = rs.getString("price");
+                String supplier = rs.getString("supplier");
+                String category = rs.getString("category");
+                String time = rs.getString("available");
+
+                Object[] row = {fid, name, price, supplier, category, time};
+
+                DefaultTableModel dtm = (DefaultTableModel) tableview.getModel();
+
+                dtm.addRow(row);
+
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error "+e);
+        }
+
+    }//GEN-LAST:event_btnVFetchActionPerformed
+
+    private void btnVSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVSearchActionPerformed
+
+        try {
+
+            String id = txtVID.getText();
+
+            String query = "SELECT * FROM fooditems WHERE fid='" + id + "'";
+            ResultSet rs = DBconnect.search(query);
+
+            while (rs.next()) {
+
+                String fid = rs.getString("fid");
+                String name = rs.getString("name");
+                String price = rs.getString("price");
+                String supplier = rs.getString("supplier");
+                String category = rs.getString("category");
+                String time = rs.getString("available");
+
+                Object[] row = {fid, name, price, supplier, category, time};
+
+                DefaultTableModel dtm = (DefaultTableModel) tableview.getModel();
+
+                dtm.addRow(row);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_btnVSearchActionPerformed
+
+    private void txtVIDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVIDKeyTyped
+        if (evt.getID() == KeyEvent.KEY_TYPED) {
+            char inputChar = evt.getKeyChar();
+            if (inputChar >= '0' && inputChar <= '9') {
+                String text = txtVID.getText() + inputChar;
+                System.out.println("Number :- " + Integer.parseInt(text));
+            } else {
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_txtVIDKeyTyped
 
     /**
      * @param args the command line arguments
@@ -344,7 +343,7 @@ public class ViewFood extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -362,6 +361,7 @@ public class ViewFood extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new ViewFood().setVisible(true);
             }
@@ -369,33 +369,16 @@ public class ViewFood extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVBday;
-    private javax.swing.JButton btnVBuns;
-    private javax.swing.JButton btnVBurgers;
-    private javax.swing.JButton btnVCake;
-    private javax.swing.JButton btnVClose;
-    private javax.swing.JButton btnVCutlet;
+    private javax.swing.JButton btnHomePage;
+    private javax.swing.JButton btnVClear;
     private javax.swing.JButton btnVDelete;
-    private javax.swing.JButton btnVDrinks;
     private javax.swing.JButton btnVFetch;
-    private javax.swing.JButton btnVHome;
-    private javax.swing.JButton btnVKottu;
-    private javax.swing.JButton btnVMilk;
-    private javax.swing.JButton btnVMin;
-    private javax.swing.JButton btnVNoodles;
-    private javax.swing.JButton btnVPastry;
-    private javax.swing.JButton btnVPizza;
-    private javax.swing.JButton btnVRice;
-    private javax.swing.JButton btnVRolls;
-    private javax.swing.JButton btnVSandwich;
     private javax.swing.JButton btnVSearch;
-    private javax.swing.JButton btnVSoft;
-    private javax.swing.JButton btnVSweets;
+    private javax.swing.JComboBox<String> comboVCategory;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableview;
     private javax.swing.JTextField txtVID;

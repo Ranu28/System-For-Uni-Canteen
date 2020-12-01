@@ -3,8 +3,10 @@ package DatabaseConnection;
 
 //import com.mysql.jdbc.Connection;
 
+import com.mysql.jdbc.Statement;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,5 +43,31 @@ public class DBconnect {
         
         return con;        
     }
+        public static void sendQuery(String query) throws Exception{
+        
+    
+        if(getConnect() == null){
+        
+            getConnect();
+            
+        }
+        
+        Statement s = (Statement) getConnect().createStatement();
+        s.executeUpdate(query);
+        
+    }
+    
+    public static ResultSet search(String query) throws Exception{
+    
+        if(getConnect() == null){
+        
+            getConnect();
+            
+        }
+    
+        return getConnect().createStatement().executeQuery(query);
+        
+    }
+
     
 }
